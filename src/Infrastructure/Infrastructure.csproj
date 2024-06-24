@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\Build\Common.props" />
+  <PropertyGroup>
+    <RootNamespace>workerOnBording.Infrastructure</RootNamespace>
+    <AssemblyName>workerOnBording.Infrastructure</AssemblyName>
+    <Version>8.2.2</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="EventHandler\**" />
+    <EmbeddedResource Remove="EventHandler\**" />
+    <None Remove="EventHandler\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Andreani.ARQ.AMQStreams" Version="8.4.3" />
+    <PackageReference Include="Andreani.ARQ.Core" Version="8.4.3" />
+    <PackageReference Include="Andreani.ARQ.CQRS" Version="8.4.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="Persistence\Configurations\" />
+  </ItemGroup>
+</Project>
